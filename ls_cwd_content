@@ -1,0 +1,21 @@
+total 64
+drwxr-xr-x 6 root root 4096 Sep  5 02:59 .
+drwxr-xr-x 1 root root  155 Aug 31 01:41 ..
+-rwxr--r-- 1 root root   32 Sep  5 01:38 0-hello_world
+drwxr-xr-x 2 root root 4096 Aug 31 13:45 0x00-shell_basics
+drwxr-xr-x 2 root root 4096 Sep  1 05:48 0x01-shell_permissions
+drwxr-xr-x 2 root root    6 Sep  5 01:34 0x02-shell_redirections
+-rwxr--r-- 1 root root   28 Sep  5 01:58 1-confused_smiley
+-rwxr--r-- 1 root root   27 Sep  5 01:57 1-confused_smiley~
+-rwxr--r-- 1 root root   28 Sep  5 02:00 2-hellofile
+-rwxr--r-- 1 root root   39 Sep  5 02:35 3-twofiles
+-rwxr--r-- 1 root root   29 Sep  5 02:40 4-lastlines
+-rwxr--r-- 1 root root   34 Sep  5 02:44 5-firstlines
+-rwxr--r-- 1 root root   29 Sep  5 02:43 5-firstlines~
+-rwxr--r-- 1 root root   40 Sep  5 02:48 6-third_line
+-rwxr--r-- 1 root root   90 Sep  5 02:54 7-file
+-rwxr--r-- 1 root root   36 Sep  5 02:58 8-cwd_state
+drwxr-xr-x 8 root root  185 Sep  5 01:53 .git
+-rw-r--r-- 1 root root   17 Sep  5 02:55 \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root    0 Sep  5 02:59 ls_cwd_content
+-rw-r--r-- 1 root root 2465 Sep  5 01:53 README.md
