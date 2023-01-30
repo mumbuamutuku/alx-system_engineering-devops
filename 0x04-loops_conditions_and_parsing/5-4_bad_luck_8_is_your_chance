@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#this script displays "Best  school" , bad luck at 4th iteration and goodluck at 8th iteration
+j=0
+while [ $j -le 9 ]; do
+	if [[ $j -eq 3 ]]; then
+		echo "bad luck"
+	elif [[ $j -eq 8 ]]; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((j++))
+done
+

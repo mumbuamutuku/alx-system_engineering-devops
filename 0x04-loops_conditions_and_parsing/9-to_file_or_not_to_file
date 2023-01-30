@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Gives information about the school file
+FILE=school
+if test ! -e $FILE; then
+	echo "school file does not exist"
+else
+	echo "school file exists"
+	if test -s $FILE; then
+		echo "school file is not empty"
+	else
+		echo "school file is empty"
+	fi
+	if test -f $FILE; then
+		echo "school is a regular file"
+	fi
+fi
+
