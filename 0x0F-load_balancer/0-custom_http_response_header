@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Confihgur web2 to match m own srver
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://twitter.com/lilwildkid permanent;" /etc/nginx/sites-enabled/default
+
+echo "Ceci n'est pas une page" |sudo tee /usr/share/nginx/html/page_error_404.html
+sudo sed -i '37i error_page 404 /page_error_404.html;\nlocation = /page_error_404.html {\nroot /usr/share/nginx/html; \ninternal;\n}\n' /etc/nginx/sites-enabled/default
+
+sudo sed -i "44i \tadd_header X-Served-By: $HOSTNAME;\n" /etc/nginx/sites-available/default
+sudo service nginx restart
