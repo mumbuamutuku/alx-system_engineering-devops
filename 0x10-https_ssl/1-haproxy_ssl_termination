@@ -1,0 +1,22 @@
+frontend www-https
+    bind *:443 ssl crt /etc/haproxy/certs/mumbua.tech
+    mode http
+    option http-server-close
+    option forwardfor
+    reqadd X-Forwarded-Proto:\ https
+    default_backend mumbua-backend
+
+frontend www-http
+    bind *:80
+    mode http
+    option http-server-close
+    option forwardfor
+    reqirep ^([^\ :]*)\ /(.*) \1\ /\2
+    redirect scheme https if !{ ssl_fc }
+
+backend mumbua-backend
+	balance roundrobin
+        redirect scheme https if !{ ssl_fc }
+	server 108643-web-01 54.236.188.125 check
+	server 108643-web-02 54.144.158.189 check
+sudo systemctl restart haproxy
