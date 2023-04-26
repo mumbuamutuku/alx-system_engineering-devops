@@ -12,8 +12,8 @@ if __name__ == "__main__":
     todos = requests.get(url + "todos", params={"userId": user_id}).json()
 
     with open("{}.jsom".format(user_id), "w") as jsnfile:
-        json.dump{user_id: [{
-            "task": t.get("title")
+        json.dump({user_id: [{
+            "task": t.get("title"),
             "completed": t.get("completed"),
             "username": username
             } for t in todos]}, jsnfile)
