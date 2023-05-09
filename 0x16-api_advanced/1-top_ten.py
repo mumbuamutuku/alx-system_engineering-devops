@@ -13,7 +13,7 @@ def top_ten(subreddit):
     p = {
             "limit": 10
             }
-    resp = requests.get(url, h=h, p=p, allow_redirects=False)
+    resp = requests.get(url, headers=h, params=p, allow_redirects=False)
     if resp.status_code == 404:
         print("None")
         return
