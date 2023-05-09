@@ -12,7 +12,7 @@ def recurse(subreddit, hot_list=[], after="", c=0):
     }
     p = {
             "after": after,
-            "c": count
+            "c": c,
             "limit": 100
             }
     resp = requests.get(url, headers=h, params=p, allow_redirects=False)
@@ -23,8 +23,8 @@ def recurse(subreddit, hot_list=[], after="", c=0):
     after = res.get("after")
     c += res.get("dist")
     for j in res.get("children"):
-        alist.append(j.get("data").get("title"))
+        hot_list.append(j.get("data").get("title"))
 
     if after is not None:
-        return recurse(subreddit alist after, c)
-    return alist
+        return recurse(subreddit, hot_list, after, c)
+    return hot_list
